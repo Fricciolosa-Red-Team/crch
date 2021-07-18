@@ -14,3 +14,6 @@ go build -o bbtargets
 sudo mv bbtargets /usr/bin
 cd ~
 git clone https://github.com/projectdiscovery/nuclei-templates.git
+echo ""
+echo "[ !!!! ] Remember to set ~/.config/notify/notify.conf [ !!!! ]"
+echo ""
