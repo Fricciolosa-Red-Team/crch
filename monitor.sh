@@ -1,7 +1,9 @@
 while 1:
 do  
+    # grab all bug bounty 2nd level domains
     bbtargets > targets.txt
 
+    # for every target grab subdomains
     for line in $(cat targets.txt)
     do
 
@@ -17,12 +19,17 @@ do
 
         rm -rf subfinder.txt findomain-subs.txt assetfinder-subs.txt output-scilla/$line.subdomain.txt
     
+        # and if there are new subs add them to the proper file.
         cat "${line}.subs.txt" | anew subdomains.txt
+
+        rm -rf "${line}.subs.txt"
 
     done
 
-    nuclei -t ~/nuclei-templates/takeovers -l subdomains.txt
+    # silenty print only vuln and notify me
+    nuclei -t ~/nuclei-templates/takeovers -l subdomains.txt -silent | notify
     
-    sleep 3600
+    # this every 2 hours
+    sleep 7200
 
 done
