@@ -1,10 +1,13 @@
 package main
 
 import (
+	"bufio"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
+	"os"
 	"strings"
 	"time"
 )
@@ -35,7 +38,6 @@ func GetTargets() []string {
 	url := "https://raw.githubusercontent.com/projectdiscovery/public-bugbounty-programs/master/chaos-bugbounty-list.json"
 	resp, err := client.Get(url)
 	if err != nil {
-		fmt.Println(err)
 		return []string{}
 	}
 	defer resp.Body.Close()
@@ -43,7 +45,6 @@ func GetTargets() []string {
 	body, _ := ioutil.ReadAll(resp.Body)
 
 	if err := json.Unmarshal(body, &results); err != nil {
-		fmt.Println(err)
 		return []string{}
 	}
 
@@ -53,24 +54,24 @@ func GetTargets() []string {
 		if res.Bounty {
 			if strings.Contains(res.Url, "hackerone") || strings.Contains(res.Url, "bugcrowd") ||
 				strings.Contains(res.Url, "intigriti") || strings.Contains(res.Url, "yeswehack") {
-				output = append(output, cleanForbidden(res.Domains)...)
+				output = append(output, cleanIgnored(res.Domains)...)
 			}
 		}
 	}
 	return output
 }
 
-func cleanForbidden(domains []string) []string {
-	var forbidden = []string{"tweakblogs", ".onion"}
-	var forbiddens []string
+func cleanIgnored(domains []string) []string {
+	var ignored = readFile("ignored.txt")
+	var ignoredsubs []string
 	for _, domain := range domains {
-		for _, forb := range forbidden {
+		for _, forb := range ignored {
 			if strings.Contains(domain, forb) {
-				forbiddens = append(forbiddens, domain)
+				ignoredsubs = append(ignoredsubs, domain)
 			}
 		}
 	}
-	return difference(domains, forbiddens)
+	return difference(domains, ignoredsubs)
 }
 
 // difference returns the elements in `a` that aren't in `b`.
@@ -86,4 +87,38 @@ func difference(a, b []string) []string {
 		}
 	}
 	return diff
+}
+
+//readFile >
+func readFile(inputFile string) []string {
+	file, err := os.Open(inputFile)
+	if err != nil {
+		log.Fatalf("failed to open %s ", inputFile)
+	}
+	scanner := bufio.NewScanner(file)
+	scanner.Split(bufio.ScanLines)
+	var text []string
+	var dir = ""
+	for scanner.Scan() {
+		dir = scanner.Text()
+		if len(dir) > 0 {
+			text = append(text, dir)
+		}
+	}
+	file.Close()
+	text = removeDuplicateValues(text)
+	return text
+}
+
+//removeDuplicateValues >
+func removeDuplicateValues(strSlice []string) []string {
+	keys := make(map[string]bool)
+	list := []string{}
+	for _, entry := range strSlice {
+		if _, value := keys[entry]; !value {
+			keys[entry] = true
+			list = append(list, entry)
+		}
+	}
+	return list
 }
