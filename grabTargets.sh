@@ -23,7 +23,7 @@ do
     rm -rf subfinder.txt findomain-subs.txt assetfinder-subs.txt output-scilla/$line.subdomain.txt
     
     # and if there are new subs add them to the proper file.
-    cat "${line}.subs.txt" | anew subdomains.txt
+    cat "${line}.subs.txt" | grep -v "*" | anew subdomains.txt
 
     rm -rf "${line}.subs.txt"
 
