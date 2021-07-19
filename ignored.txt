@@ -6,3 +6,5 @@ telenet
 atlassian
 cisco
 etsy.com
+github.com
+shopify.com
