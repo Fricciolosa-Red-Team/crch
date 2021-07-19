@@ -1,0 +1,5 @@
+Insert here the domains you don't want to scan.
+
+Example:
+cisco.com
+ovh.com
