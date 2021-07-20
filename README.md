@@ -11,8 +11,9 @@ If there are, it will nofity you using one or more than one among Telegram, Disc
 
 - `./install.sh`
 
-Dependencies:
-  - Go
+Dependencies (installed with the `install.sh` script) :
+  - [Go](https://go.dev/learn/)
+  - [scilla](https://github.com/edoardottt/scilla)
   - [notify](https://github.com/projectdiscovery/notify/cmd/notify)
   - [intercept](https://github.com/projectdiscovery/notify/cmd/intercept)
   - [anew](https://github.com/tomnomnom/anew)
