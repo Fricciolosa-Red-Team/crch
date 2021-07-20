@@ -9,7 +9,7 @@ If there are, it will nofity you using one or more than one among Telegram, Disc
 
 ## Installation
 
-- `./install.sh`
+- `./install.sh` (Run without sudo, then it will ask for password)
 
 Dependencies (installed with the `install.sh` script) :
   - [Go](https://go.dev/learn/)
