@@ -11,6 +11,17 @@ If there are, it will nofity you using one or more than one among Telegram, Disc
 
 - `./install.sh`
 
+Dependencies:
+  - Go
+  - [notify](https://github.com/projectdiscovery/notify/cmd/notify)
+  - [intercept](https://github.com/projectdiscovery/notify/cmd/intercept)
+  - [anew](https://github.com/tomnomnom/anew)
+  - [subfinder](https://github.com/projectdiscovery/subfinder/v2/cmd/subfinder)
+  - [findomain](https://github.com/findomain/findomain)
+  - [assetfinder](https://github.com/tomnomnom/assetfinder)
+  - [nuclei](https://github.com/projectdiscovery/nuclei/v2/cmd/nuclei)
+  - [nuclei-templates](https://github.com/projectdiscovery/nuclei-templates)
+
 ## Usage
 
 - Edit the file `~/.config/notify/notify.conf` with your keys/tokens.
