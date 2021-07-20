@@ -1,5 +1,8 @@
 # see https://github.com/Fricciolosa-Red-Team/crch/blob/main/LICENSE
 
+echo ""
+echo " => Continuous Recon Continuous Hacking <= "
+echo ""
 sudo apt update && sudo apt upgrade && sudo apt autoremove
 sudo apt install golang
 GO111MODULE=on go get -v github.com/projectdiscovery/notify/cmd/notify
@@ -22,5 +25,8 @@ go get
 make linux
 cd ~
 echo ""
-echo "[ !!!! ] Remember to set ~/.config/notify/notify.conf [ !!!! ]"
+echo "[ !!!! ] Remember to: [ !!!! ]"
+echo ""
+echo "    > set ~/.config/notify/notify.conf !"
+echo "    > add the go/bin folder to your PATH system variable !"
 echo ""
