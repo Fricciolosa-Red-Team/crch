@@ -16,6 +16,11 @@ go build -o bbtargets
 sudo mv bbtargets /usr/bin
 cd ~
 git clone https://github.com/projectdiscovery/nuclei-templates.git
+git clone https://github.com/edoardottt/scilla.git
+cd scilla
+go get
+make linux
+cd ~
 echo ""
 echo "[ !!!! ] Remember to set ~/.config/notify/notify.conf [ !!!! ]"
 echo ""
