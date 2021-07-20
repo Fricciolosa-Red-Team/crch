@@ -16,6 +16,10 @@ import (
 
 func main() {
 	output := GetTargets()
+	if len(output) == 0 {
+		fmt.Println("[ ! ] Error while retrieving targets.")
+		os.Exit(1)
+	}
 	for _, elem := range output {
 		fmt.Println(elem)
 	}
