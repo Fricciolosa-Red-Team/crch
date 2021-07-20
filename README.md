@@ -1,5 +1,5 @@
 # crch
-Continuous Recon Continuous Hacking
+**C**ontinuous **R**econ **C**ontinuous **H**acking
 
 ## Description
 
