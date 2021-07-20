@@ -1,3 +1,5 @@
+// see https://github.com/Fricciolosa-Red-Team/crch/blob/main/LICENSE
+
 package main
 
 import (
