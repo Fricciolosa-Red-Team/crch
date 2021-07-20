@@ -1,3 +1,5 @@
+# see https://github.com/Fricciolosa-Red-Team/crch/blob/main/LICENSE
+
 sudo apt update && sudo apt upgrade && sudo apt autoremove
 sudo apt install golang python3
 GO111MODULE=on go get -v github.com/projectdiscovery/notify/cmd/notify
