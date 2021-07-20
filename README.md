@@ -5,7 +5,7 @@
 
 It grabs all the root domains in BB programs (Hackerone, Intigriti, BugCrowd and YesWeHack), then it performes  
 subdomains enumeration and check if there are new possible subdomain takeovers with nuclei and nuclei-templates.  
-If there are, it will nofity you using one or more than one among Telegram, Discord and Slack.
+If there are, it will notify you using one or more than one among Telegram, Discord and Slack.
 
 ## Installation
 
