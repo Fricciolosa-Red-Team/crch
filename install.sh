@@ -17,6 +17,9 @@ go get -u github.com/tomnomnom/assetfinder
 GO111MODULE=on go get -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
 go build -o bbtargets
 sudo mv bbtargets /usr/bin
+cd utils
+go build -o addpro
+sudo mv addpro /usr/bin
 cd ~
 git clone https://github.com/projectdiscovery/nuclei-templates.git
 git clone https://github.com/edoardottt/scilla.git
