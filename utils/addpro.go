@@ -8,6 +8,7 @@ cat subs-tmp.txt | removepro | addpro > subs-final.txt
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 	"strings"
 )
@@ -15,17 +16,8 @@ import (
 func main() {
 	input := ScanTargets()
 
-	f, err := os.Create("temp")
-	if err != nil {
-		panic(err)
-	}
-
-	defer f.Close()
 	for _, elem := range removeDuplicateValues(input) {
-		_, err := f.WriteString("https://" + elem + "\n")
-		if err != nil {
-			panic(err)
-		}
+		fmt.Println("https://" + elem)
 	}
 
 }
