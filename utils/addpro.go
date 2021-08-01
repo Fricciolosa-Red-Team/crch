@@ -13,6 +13,7 @@ import (
 	"strings"
 )
 
+//main function
 func main() {
 	input := ScanTargets()
 
@@ -36,7 +37,7 @@ func ScanTargets() []string {
 	return result
 }
 
-//removeDuplicateValues
+//removeDuplicateValues >
 func removeDuplicateValues(strSlice []string) []string {
 	keys := make(map[string]bool)
 	list := []string{}
