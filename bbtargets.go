@@ -41,6 +41,8 @@ type Programs struct {
 	Targets []Target `json:"programs"`
 }
 
+//GetTargets is the function that actually retrieves
+//the json file containing the informations.
 func GetTargets() []string {
 	client := http.Client{
 		Timeout: 30 * time.Second,
@@ -62,6 +64,7 @@ func GetTargets() []string {
 	var output []string
 
 	for _, res := range results.Targets {
+		//ony programs with bounty
 		if res.Bounty {
 			if strings.Contains(res.Url, "hackerone") || strings.Contains(res.Url, "bugcrowd") ||
 				strings.Contains(res.Url, "intigriti") || strings.Contains(res.Url, "yeswehack") {
@@ -72,6 +75,8 @@ func GetTargets() []string {
 	return output
 }
 
+//cleanIgnored is the function that clean the results
+//from ignored targets.
 func cleanIgnored(domains []string) []string {
 	var ignored = readFile("ignored.txt")
 	var ignoredsubs []string
@@ -85,7 +90,7 @@ func cleanIgnored(domains []string) []string {
 	return difference(domains, ignoredsubs)
 }
 
-// difference returns the elements in `a` that aren't in `b`.
+//difference returns the elements in `a` that aren't in `b`.
 func difference(a, b []string) []string {
 	mb := make(map[string]struct{}, len(b))
 	for _, x := range b {
