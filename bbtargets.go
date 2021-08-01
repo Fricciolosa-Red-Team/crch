@@ -14,6 +14,7 @@ import (
 	"time"
 )
 
+//main function
 func main() {
 	output := GetTargets()
 	if len(output) == 0 {
@@ -25,6 +26,8 @@ func main() {
 	}
 }
 
+//Target is a struct containing informations about
+//a single bug bounty program.
 type Target struct {
 	Name    string   `json:"name"`
 	Url     string   `json:"url"`
@@ -32,6 +35,8 @@ type Target struct {
 	Domains []string `json:"domains"`
 }
 
+//Programs is a struct containing informations about
+//all the programs.
 type Programs struct {
 	Targets []Target `json:"programs"`
 }
