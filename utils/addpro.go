@@ -1,3 +1,5 @@
+// This repository is under GNU General Public License v3.0.
+
 package main
 
 /*
