@@ -3,17 +3,17 @@
 
 ## Description
 
-It grabs all the root domains in bug bounty programs (Hackerone, Intigriti, BugCrowd and YesWeHack), then it performes
+It grabs all the second level domains in Bug Bounty programs (Hackerone, Intigriti, BugCrowd and YesWeHack), then it performes
 subdomains enumeration and check if there are new possible subdomain takeovers with *nuclei* and *nuclei-templates*.
 If there are, it will notify you using one or more than one among Telegram, Discord and Slack.
 
-You can run this program whenever you want, however it is recommended to use it on a VPS.
+You can run this program wherever you want, however it is recommended to use it on a VPS.
 
 ## Installation
 
 - `./install.sh` (Run without sudo, then it will ask for password)
 
-Dependencies (installed with the `install.sh` script) :
+Dependencies (installed with the `install.sh` script):
   - [Go](https://go.dev/learn/)
   - [scilla](https://github.com/edoardottt/scilla)
   - [notify](https://github.com/projectdiscovery/notify/cmd/notify)
