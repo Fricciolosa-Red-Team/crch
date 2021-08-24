@@ -1,7 +1,7 @@
 # crch
 **C**ontinuous **R**econ **C**ontinuous **H**acking
 
-## Description
+## Description 📖
 
 It grabs all the second level domains in Bug Bounty programs (Hackerone, Intigriti, BugCrowd and YesWeHack), then it performes
 subdomains enumeration and check if there are new possible subdomain takeovers with *nuclei* and *nuclei-templates*.
@@ -9,7 +9,7 @@ If there are, it will notify you using one or more than one among Telegram, Disc
 
 You can run this program wherever you want, however it is recommended to use it on a VPS.
 
-## Installation
+## Installation 📩
 
 - `./install.sh` (Run without sudo, then it will ask for password)
 
@@ -25,12 +25,12 @@ Dependencies (installed with the `install.sh` script):
   - [nuclei](https://github.com/projectdiscovery/nuclei/v2/cmd/nuclei)
   - [nuclei-templates](https://github.com/projectdiscovery/nuclei-templates)
 
-## Usage
+## Usage 🛠️
 
 - Edit the file `~/.config/notify/notify.conf` with your keys/tokens.
 - `./grabTargets.sh`
 - `./monitor.sh`
 
-## License
+## License 📜
 
 This repository is under [GNU General Public License v3.0](https://github.com/Fricciolosa-Red-Team/crch/blob/main/LICENSE).
