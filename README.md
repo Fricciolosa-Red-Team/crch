@@ -25,7 +25,7 @@ Dependencies (installed with the `install.sh` script):
   - [nuclei](https://github.com/projectdiscovery/nuclei/v2/cmd/nuclei)
   - [nuclei-templates](https://github.com/projectdiscovery/nuclei-templates)
 
-## Usage 🛠️
+## Usage 🚀
 
 - Edit the file `~/.config/notify/notify.conf` with your keys/tokens.
 - `./grabTargets.sh`
