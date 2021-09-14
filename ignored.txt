@@ -5,6 +5,7 @@ ovh
 telenet
 atlassian
 cisco
+githubusercontent.com
 etsy.com
 github.com
 shopify.com
