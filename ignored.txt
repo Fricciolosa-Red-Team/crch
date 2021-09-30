@@ -1,7 +1,7 @@
 # Example:
 tweakblogs
 .onion
-ovh
+ovh.com
 telenet
 atlassian
 cisco
