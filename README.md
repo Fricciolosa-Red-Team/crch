@@ -7,7 +7,7 @@ It grabs all the second level domains in Bug Bounty programs (Hackerone, Intigri
 subdomains enumeration and check if there are new possible subdomain takeovers with *nuclei* and *nuclei-templates*.
 If there are, it will notify you using one or more than one among Telegram, Discord and Slack.
 
-You can run this program wherever you want, however it is recommended to use it on a VPS.
+**Note**: It was designed to detect subdomain takeovers, but [editing this line](https://github.com/Fricciolosa-Red-Team/crch/blob/main/monitor.sh#L17) you can check for specific vulnerabilities (RCE, XSS, SQLi...).
 
 ## Installation 📩
 
